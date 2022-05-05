@@ -1,0 +1,923 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-size: 72.5%;
+}
+
+::-webkit-scrollbar {
+  background: #fdfdfd;
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #2195f3d7;
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2196f3;
+}
+
+/* Loader.jsx  */
+/* .loader-section{
+  width: 100%;
+  height: 100vh;
+  background: #E3F2FD;
+} */
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e3f2fd;
+}
+.loader {
+  width: 5rem;
+  height: 5rem;
+  border: 0.5rem solid #e3e3e3;
+  border-top-color: #2196f3;
+  border-radius: 50%;
+  animation: loaderAni 0.9s infinite ease-in-out;
+}
+@keyframes loaderAni {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  background-color: #2196f3;
+  /* background: linear-gradient(135deg, rgb(244, 244, 244), rgb(197, 197, 197)); */
+  min-height: 100vh;
+  position: fixed;
+  max-height: 100%;
+  width: 25rem;
+  /* transition: .1s; */
+}
+.main {
+  background-color: #e3f2fd;
+  position: absolute;
+  top: 0;
+  left: 25rem;
+  right: 0;
+  /* width: calc(100vw-25rem); */
+  min-height: 100vh;
+  /* max-height: 100%; */
+  /* text-align: center; */
+  /* transition: .1s; */
+}
+.footer {
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* left: 18%; */
+  /* width: 82%; */
+  height: 100%;
+  text-align: center;
+  background-color: #2196f3;
+  padding: 2rem 0;
+}
+.footer p {
+  font-size: 1.4rem;
+  color: white;
+}
+.about-section {
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about {
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  padding: 2rem 1rem;
+  width: 400px;
+  height: 200px;
+  border: 0.5rem outset #2196f3;
+}
+.about h1 {
+  font-size: 2.4rem;
+  line-height: 1.5;
+}
+.about p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0.9rem 0;
+  line-height: 1.4;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Syling for Sidebar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.logo-menu {
+  display: flex;
+  padding: 1rem;
+}
+
+.main-logo {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #e3f2fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.main-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-menu li {
+  list-style: none;
+}
+.fit-icon {
+  position: relative;
+  left: 5px;
+  top: 2px;
+}
+.main-menu .a {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.main-menu .a.active {
+  /* border-left: .2rem solid white; */
+  color: #0d47a1;
+}
+.main-menu .a:hover {
+  background: rgba(255, 255, 255, 0.105);
+}
+.main-menu .a:active {
+  transform: scale(0.95);
+}
+.main-menu .a li span {
+  margin-left: 1.5rem;
+  /* margin-bottom: 21px; */
+  position: relative;
+  bottom: 3px;
+}
+
+/* For upper navbar */
+.upper-navbar-showcase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2196f3;
+  z-index: 999;
+  display: none;
+}
+.logo-icon-showcase {
+  padding: 0.5rem 1rem;
+}
+
+.hamburger-icon {
+  font-size: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  color: #e3f2fd;
+  /* margin-right: 1rem; */
+  right: 1rem;
+  top: 1rem;
+}
+.upper {
+  margin-top: 62px;
+}
+.upper-navbar-real {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #2195f3;
+  /* filter: blur(1px); */
+  width: 230px;
+  height: 100%;
+  transition: 0.3s;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Syling for Homepage <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.global-stats-container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.global-stats-container h1 {
+  /* text-align: center; */
+  padding: 0 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #2196f3;
+}
+.global-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  /* margin-top: 1.5rem; */
+  /* background-color: rgba(0, 0, 0, 0.027); */
+  border-radius: 0.5rem;
+  padding: 2rem 1rem 2rem 4rem;
+}
+.global-stats div {
+  /* margin: 1rem 0; */
+  padding: 0.5rem;
+  /* box-shadow: .002rem .002rem 2rem rgba(0, 0, 0, 0.104); */
+}
+.global-stats div h5 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2;
+  color: #696969;
+}
+.global-stats div p {
+  font-size: 2.2rem;
+  line-height: 1.5;
+}
+.cryptos-heading {
+  /* margin-left: 4rem; */
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 0 2rem 1rem 2rem;
+  font-size: 1.4rem;
+  color: #2196f3;
+}
+.cryptos-heading h1 {
+  font-weight: 600;
+}
+.cryptos-heading .link {
+  text-decoration: none;
+  color: #2196f3;
+  font-size: 2rem;
+}
+.cryptos-heading .link:hover {
+  color: #696969;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Syling for Cryptocurrencies <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.cryptos-section {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.cryptos-search {
+  text-align: center;
+  margin: 2rem 0;
+}
+.cryptos-search input,
+.cryptos-search select {
+  padding: 0.5rem 1rem;
+  width: 25rem;
+  outline: none;
+  border: 0.1rem solid #2196f3;
+  background: #e3f2fd;
+  transition: 0.5s;
+}
+input:hover,
+select:hover {
+  background: #ffffff;
+}
+input:focus,
+select:focus {
+  background: #ffffff;
+}
+
+.cryptos-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 330px);
+  gap: 3rem;
+  justify-content: center;
+}
+.cryptos-container .link {
+  text-decoration: none;
+  color: black;
+}
+.crypto-box {
+  /* border: .1rem solid black; */
+  background: #ffffff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.crypto-box:hover {
+  box-shadow: 2px 2px 14px rgba(97, 97, 97, 0.35);
+  -webkit-box-shadow: 2px 2px 14px rgba(97, 97, 97, 0.35);
+  -moz-box-shadow: 2px 2px 14px rgba(97, 97, 97, 0.35);
+}
+.crypto-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 0.1rem solid rgb(233, 233, 233);
+}
+.crypto-box-header h3 {
+  font-weight: 500;
+  color: #121212;
+  font-size: 1.3rem;
+}
+.crypto-box-body {
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+}
+.crypto-box-body p {
+  font-size: 1.15rem;
+  line-height: 2.8;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Syling for CryptoDetail.jsx <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.cryptoDetails-section {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 3rem;
+}
+
+.cryptoDetail-heading {
+  text-align: center;
+  padding: 2rem 0;
+}
+.cryptoDetail-heading .coin-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cryptoDetail-heading .coin-heading img {
+  margin-right: 1rem;
+  position: relative;
+  top: 2px;
+  left: 0px;
+}
+.cryptoDetail-heading h1 {
+  line-height: 2.3;
+  font-size: 2.9rem;
+  font-weight: 800;
+}
+.cryptoDetail-heading p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.cryptoDetail-selection {
+  margin: 2rem 0 1rem 0;
+}
+.cryptoDetail-selection select {
+  width: 15rem;
+  border: 0.1rem solid #2196f3;
+  outline: none;
+  transition: 0.4s;
+  padding: 0.3rem;
+  cursor: pointer;
+  background: #e3f2fd;
+}
+
+.coin-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.coinStats-heading h2 {
+  font-size: 3rem;
+  /* color: #696969; */
+  text-align: center;
+  line-height: 1.7;
+}
+.coinStats-heading p {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #121212;
+  line-height: 1.5;
+}
+.desc-container {
+  margin: 1.6rem 0;
+}
+.coinStats-desc {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+  background: rgba(255, 255, 255, 0.706);
+  padding: 2.5rem 1rem;
+  border-bottom: 0.1rem solid #0d47a1;
+}
+.coinStats-desc:hover {
+  background: white;
+}
+.coinStats-desc h4 {
+  font-weight: 500;
+}
+.coinStats-desc h4,
+.coinStats-desc p {
+  font-size: 1.2rem;
+}
+.coinStats-desc h4 span svg {
+  position: relative;
+  top: 2px;
+}
+
+.coin-linkAbout {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  margin: 5rem 0;
+}
+.coinAbout-desc h3 {
+  color: #0d47a1;
+  font-size: 1.8rem;
+  line-height: 2.5;
+}
+.coinAbout-desc a {
+  text-decoration: none;
+  color: #2196f3;
+  line-height: 1.6;
+}
+.coinAbout-desc p {
+  color: #121212;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.coin-about-container {
+  width: 50%;
+}
+.coin-link-container {
+  width: 40%;
+}
+.coin-about-container h1,
+.coin-link-container h1 {
+  line-height: 2.2;
+  font-size: 2.8rem;
+}
+.coinLinks {
+  margin-top: 1rem;
+}
+.coinLink {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  /* width: 40rem; */
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem 1rem;
+  border-bottom: 0.1rem solid #0d47a1;
+}
+.coinLink:hover {
+  background: rgb(255, 255, 255);
+}
+.coinLink p {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+.coinLink a {
+  text-decoration: none;
+  color: #2196f3;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Syling for LineChart.jsx <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.crypto-chart-section {
+  margin-bottom: 4rem;
+}
+.chart-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chart-heading h1 {
+  /* color: #2196F3; */
+  font-size: 3rem;
+}
+.chart-heading div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chart-heading div p:first-child {
+  margin-right: 2rem;
+}
+.chart-heading div p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Syling for LineChart.jsx <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.news-section {
+  padding: 1rem;
+}
+.news-box {
+  display: grid;
+  grid-template-columns: repeat(3, 430px);
+  gap: 3rem;
+  padding: 1rem;
+  justify-content: center;
+}
+.news-box a {
+  text-decoration: none;
+  color: black;
+}
+
+.newsBox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: 0.5s;
+}
+.newsBox-container:hover {
+  box-shadow: 2px 2px 14px rgba(97, 97, 97, 0.35);
+  -webkit-box-shadow: 2px 2px 14px rgba(97, 97, 97, 0.35);
+  -moz-box-shadow: 2px 2px 14px rgba(97, 97, 97, 0.35);
+}
+.news-header h3 {
+  margin-right: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.news-header img {
+  width: 8rem;
+  height: 8rem;
+}
+.news-content {
+  margin: 1.5rem 0;
+}
+.news-content p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.news-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.news-admin {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.news-admin img {
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 0.01rem solid rgb(239, 239, 239);
+}
+
+/* Media Queries */
+
+@media (max-width: 1820px) {
+  .cryptos-container {
+    grid-template-columns: repeat(3, 350px);
+  }
+  .news-box {
+    grid-template-columns: repeat(2, 500px);
+  }
+}
+
+@media (max-width: 1450px) {
+  .cryptos-container {
+    grid-template-columns: repeat(3, 300px);
+    gap: 1rem;
+  }
+  .global-stats {
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(2, 450px);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  html {
+    font-size: 70%;
+  }
+  .navbar {
+    width: 21rem;
+  }
+  .main {
+    left: 21rem;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(3, 265px);
+    gap: 1rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(2, 400px);
+    gap: 1rem;
+  }
+  .cryptos-heading {
+    font-size: 1.3rem;
+  }
+  .cryptos-heading .link {
+    font-size: 1.7rem;
+  }
+  .global-stats-container h1 {
+    font-size: 2.7rem;
+  }
+}
+@media (max-width: 1150px) {
+  html {
+    font-size: 69.1%;
+  }
+  .navbar {
+    width: 18rem;
+  }
+  .main {
+    left: 18rem;
+  }
+  .main-logo {
+    font-size: 1.5rem;
+  }
+  .main-logo img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cryptos-container {
+    grid-template-columns: repeat(3, 240px);
+    gap: 1rem;
+  }
+  .crypto-box-header,
+  .crypto-box-body,
+  .newsBox-container {
+    padding: 1.2rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(2, 370px);
+    gap: 0.5rem;
+  }
+}
+
+/* Laptop Media Queries (width:1024px) */
+
+@media (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+  .upper-navbar-showcase {
+    display: flex;
+  }
+  .main {
+    top: 54px;
+    left: 0;
+  }
+  .global-stats-container {
+    padding: 0 1rem;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(3, 260px);
+    gap: 1.5rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(2, 390px);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 68.8%;
+  }
+  .global-stats {
+    padding: 1rem;
+  }
+  .cryptos-section,
+  .news-section {
+    padding: 0;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(3, 230px);
+    gap: 1rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(2, 345px);
+    gap: 1rem;
+  }
+  .footer {
+    padding: 1.4rem 0;
+  }
+}
+
+/* for TABLET layout styling */
+
+@media (max-width: 768px) {
+  .cryptos-heading h1,
+  .global-stats-container h1 {
+    font-size: 2.2rem;
+  }
+  .global-stats-container h1 {
+    margin-top: 1rem;
+  }
+  .cryptos-heading .link {
+    font-size: 1.3rem;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(2, 260px);
+    gap: 2rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(1, 475px);
+    gap: 2rem;
+  }
+}
+@media (max-width: 620px) {
+  html {
+    font-size: 63.8%;
+  }
+  .main {
+    top: 47px;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(2, 230px);
+    gap: 1rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(1, 425px);
+    gap: 1rem;
+  }
+}
+@media (max-width: 560px) {
+  .global-stats div h5 {
+    font-size: 1.2rem;
+  }
+  .global-stats div p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(2, 220px);
+    gap: 0.5rem;
+  }
+}
+/* for MOBILE layout styling */
+@media (max-width: 495px) {
+  .cryptos-heading h1,
+  .global-stats-container h1 {
+    font-size: 2rem;
+  }
+  .global-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .cryptos-container {
+    grid-template-columns: repeat(1, 260px);
+    gap: 1.5rem;
+  }
+  .news-box {
+    grid-template-columns: repeat(1, 320px);
+    padding: 1rem 0;
+  }
+}
+@media (max-width: 370px) {
+  html {
+    font-size: 62.8%;
+  }
+  .news-box {
+    grid-template-columns: repeat(1, 280px);
+    padding: 1rem 0;
+  }
+  .cryptos-heading {
+    padding: 1rem 0.8rem;
+  }
+  .global-stats-container {
+    padding: 0rem;
+  }
+}
+
+/* For CryptoDetail Styling */
+
+@media (max-width: 1600px) {
+  .coin-linkAbout {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .coin-link-container,
+  .coin-about-container {
+    width: 60%;
+  }
+  .coin-link-container {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 800px) {
+  .chart-heading h1 {
+    font-size: 2.5rem;
+  }
+  .chart-heading div p:first-child {
+    margin-right: 1rem;
+  }
+  .chart-heading div p {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .coin-link-container,
+  .coin-about-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cryptoDetails-section {
+    padding: 2rem 1rem;
+  }
+  .coin-link-container,
+  .coin-about-container {
+    width: 90%;
+  }
+  .chart-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .chart-heading h1 {
+    font-size: 2.8rem;
+    line-height: 2;
+  }
+  .chart-heading div {
+    margin-bottom: 0.8rem;
+  }
+  .coinStats-desc {
+    width: 100%;
+  }
+  .desc-container {
+    margin: 1.6rem auto;
+    width: 95%;
+  }
+  .coinStats-heading h2 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 300px) {
+  .coin-about-container h1,
+  .coin-link-container h1 {
+    font-size: 2.6rem;
+  }
+  .cryptoDetail-heading p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .cryptoDetail-heading .coin-heading img {
+    margin-right: 0.5rem;
+  }
+  .cryptoDetail-heading h1 {
+    line-height: 2;
+    font-size: 2.8rem;
+  }
+ 
+}
